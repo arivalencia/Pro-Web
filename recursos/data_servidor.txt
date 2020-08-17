@@ -1,0 +1,10 @@
+FTP host: ftp-arivalencia.alwaysdata.net
+
+000webhost.com
+database
+	bd: uni
+	user: admin
+	ps: s\qJV\Su9eMd[g[%
+login del sitio
+	name: uptvalencia
+	ps: arilaska
