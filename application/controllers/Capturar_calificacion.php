@@ -17,4 +17,24 @@ class Capturar_calificacion extends CI_Controller {
 		$data["calificaciones"] = $this->M_calificaciones->getData();
 		$this->load->view('capturar_calificacion', $data);
 	}
+
+	public function capturar(){
+		$data = array();
+		$id = $this->input->post('id');
+		$data['alumno'] = $this->M_aspirante->getAlumnoById($id);
+		$data['calificaciones'] = $this->M_calificaciones->getById($id);
+		$this->load->view('capturar', $data);
+		// debug($data, false);
+	}
+
+	public function actualizar_calificacion(){
+		$id = $this->input->post('id');
+		$data = array();
+		$data['parcial1'] = $this->input->post('parcial1');
+		$data['parcial2'] = $this->input->post('parcial2');
+		$data['parcial3'] = $this->input->post('parcial3');
+		$data['parcial4'] = $this->input->post('parcial4');
+		$this->M_calificaciones->actualizarCalificacion($id, $data);
+		redirect('capturar_calificacion/index/');
+	}
 }

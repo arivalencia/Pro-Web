@@ -18,13 +18,18 @@ class M_aspirante extends CI_Model{
         return $this->db->get($this->tabla)->result();
     }
 
+    public function getAlumnoById($id){
+        $this->db->where('Id_Aspirante', $id);
+        return $this->db->get($this->tabla)->result()[0];
+    }
+
     public function insert_aspirante($data){
         $this->db->insert($this->tabla, $data);
         return $this->db->insert_id();
     }//end insert
 
     public function inscribirAspirante($id, $data){
-        $this->db->where('Id_Aspirante  ', $id);
+        $this->db->where('id_aspirante  ', $id);
         return $this->db->update($this->tabla, $data);
     }//end deleteAspirante
 }

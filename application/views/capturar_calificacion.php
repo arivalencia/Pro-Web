@@ -85,12 +85,14 @@
                                                         $calificaciones[$i]->parcial2+
                                                         $calificaciones[$i]->parcial3+
                                                         $calificaciones[$i]->parcial4)/(4).'</td>
-                                                        <td>
-                                                        <input type="hidden" name="id" value="">
+                                                        <td>';
+                                                        echo form_open_multipart('capturar_calificacion/capturar',['id'=>'nuevo_estudiante']);
+                                                        echo '<input type="hidden" name="id" value="'.$alumnos[$i]->Id_Aspirante.'">
                                                         <a href="javascript:void(0)" class="btn btn-icon btn-primary mb-2">
                                                             <input class="btn btn-primary" value="Editar" type="submit" id="button-upload">
-                                                        </a>
-                                                        </td>
+                                                        </a>';
+                                                        echo form_close();
+                                                        echo '</td>
                                                     </tr>';
                                             }
                                         ?>
@@ -107,3 +109,4 @@
     <script type="text/javascript" src="./assets/scripts/main.js"></script>
 </body>
 </html>
+

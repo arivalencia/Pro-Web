@@ -78,6 +78,8 @@ class Form_aspirante extends CI_Controller {
 						$uploadData[$i]['file_name'] = $fileData['file_name'];
 						$data[$fotosDB[$i]] = $fileData['file_name'];
 					}
+				}else{
+					$data[$fotosDB[$i]] = ' ';
 				}
 			}//End for
 		}//End if
