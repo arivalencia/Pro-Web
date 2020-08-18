@@ -8,8 +8,13 @@ class M_aspirante extends CI_Model{
         parent::__construct();
     }//end constructor
 
-    public function listar_personas(){
-        //selelct*from personas
+    public function getAspirantes(){
+        $this->db->where('Status', 0);
+        return $this->db->get($this->tabla)->result();
+    }
+
+    public function getAlumnos(){
+        $this->db->where('Status', 1);
         return $this->db->get($this->tabla)->result();
     }
 
@@ -17,4 +22,9 @@ class M_aspirante extends CI_Model{
         $this->db->insert($this->tabla, $data);
         return $this->db->insert_id();
     }//end insert
+
+    public function inscribirAspirante($id, $data){
+        $this->db->where('Id_Aspirante  ', $id);
+        return $this->db->update($this->tabla, $data);
+    }//end deleteAspirante
 }

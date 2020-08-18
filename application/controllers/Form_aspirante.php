@@ -6,7 +6,7 @@ class Form_aspirante extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->library('form_validation');
+		// $this->load->library('form_validation');
 		$this->load->helper('form');
 		//Cargar modelo de la BD
 		$this->load->model($this->model);
@@ -28,7 +28,7 @@ class Form_aspirante extends CI_Controller {
 
 	public function agregar_aspirante(){
 		$data=array();
-
+		// debug('');
 		$data['Nombre'] = $this->input->post('nombre');
 		$data['Apaterno'] = $this->input->post('a_paterno');
 		$data['Amaterno'] = $this->input->post('a_materno');
@@ -44,42 +44,53 @@ class Form_aspirante extends CI_Controller {
 		$data['rechazo'] = $this->input->post('rechazo');
 		$data['adaptacion'] = $this->input->post('adaptarse_a_cambios');
 		$data['extra'] = $this->input->post('extra');
-		$data['actanacimiento'] = "";
-		$data['curp'] = "";
-		$data['comprobante_domicilio'] = "";
-		$data['comprobante_estudio'] = "";
-		$data['ficha_admision'] ="";
-		$data['formato_inscripcion'] = "";
-		$data['fotografia_aspirante'] = "";
-		//$data['correo'] = "";
+		$fotosDB = array(
+			'actanacimiento',
+			'curp',
+			'comprobante_domicilio',
+			'comprobante_estudio',
+			'ficha_admision',
+			'formato_inscripcion',
+			'fotografia_aspirante'
+		); 
 		$data['Status'] = 0;
 		$data['Id_Carrera'] = $this->input->post('carrera');
 
-		debug($_FILES['img[]']["name"]);
+		if(count($_FILES['img']['name']) >=  7){
+			$size = count($_FILES['img']['name']);
+			for ($i=0; $i < $size; $i++) {
+				if (!empty($_FILES['img']['name'][$i])) {
+					$_FILES['imagen']['name'] = $_FILES['img']['name'][$i];
+					$_FILES['imagen']['type'] = $_FILES['img']['type'][$i];
+					$_FILES['imagen']['tmp_name'] = $_FILES['img']['tmp_name'][$i];
+					$_FILES['imagen']['error'] = $_FILES['img']['error'][$i];
+					$_FILES['imagen']['size'] = $_FILES['img']['size'][$i];
 
-		if ($_FILES['img[]']['name'] != NULL) {
-			$config['upload_path'] = './cargas';
-			$config['allowed_types'] = 'jpg|jpeg|png';
-			$this->load->library('upload', $config);
-			if (!$this->upload->do_upload('img[]')) {
-				$error = array('error' => $this->upload->display_errors());
-				debug($error);
-				//$this->index();
-			}else {
-				$file_info = $this->upload->data();
-				debug($file_info, false);
-				
-				$data1 = array('upload_data' => $this->upload->data());
-				$data['actanacimiento'] = $file_info['file_name'];
-			}
-		}
+					$config['upload_path'] = './cargas';
+					$config['allowed_types'] = 'jpg|jpeg|png';
 
+					$this->load->library('upload', $config);
+					$this->upload->initialize($config);
+
+					if($this->upload->do_upload('imagen')){
+						//debug("SUCCES", false);
+						$fileData = $this->upload->data();
+						$uploadData[$i]['file_name'] = $fileData['file_name'];
+						$data[$fotosDB[$i]] = $fileData['file_name'];
+					}
+				}
+			}//End for
+		}//End if
+		else{
+			debug("Debe subir todas las imagenes solicitadas", false);
+		}//End else
+		
 		$id = $this->{$this->model}->insert_aspirante($data);
 		if($id != NULL) {
-			redirect('welcome/');
+			redirect('form_aspirante/');
 		}//end of if
 		else {
-			debug("Error al insertar");
+			debug("Error al insertar", false);
 		}//end of else	
 	}//FIN DE FUNCION agregar_aspirante()
 }

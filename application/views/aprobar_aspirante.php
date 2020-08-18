@@ -44,17 +44,27 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Valencia Delgado</td>
-                                            <td>
-                                                <a href="javascript:void(0)" class="btn btn-icon btn-primary mb-2">
-                                                <i class="fas fa-book"></i>
-                                                    Inscribir
-                                                </a> 
-                                            </td>
-                                        </tr>
+                                        <?php
+                                            $count = 0;
+                                            foreach($aspirantes as $aspirante){
+                                                $count++;
+                                                echo '
+                                                    <tr>
+                                                        <th scope="row">'.$count.'</th>
+                                                        <td>'.$aspirante->Nombre.'</td>
+                                                        <td>'.$aspirante->Apaterno.' '.$aspirante->Amaterno.'</td>
+                                                        <td>';
+                                                            echo form_open_multipart('aprobar_aspirante/inscribir',['id'=>'nuevo_estudiante']);
+                                                                echo '<input type="hidden" name="id" value="'.$aspirante->Id_Aspirante.'">';
+                                                                echo '<a href="javascript:void(0)" class="btn btn-icon btn-primary mb-2">
+                                                                    <input class="btn btn-primary" value="Inscribir" type="submit" id="button-upload">
+                                                                </a>';
+                                                            echo form_close();
+                                                   echo '</td>
+                                                    </tr>
+                                                ';
+                                            }
+                                        ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -70,3 +80,7 @@
     <script type="text/javascript" src="./assets/scripts/main.js"></script>
 </body>
 </html>
+
+<script>
+    
+</script>

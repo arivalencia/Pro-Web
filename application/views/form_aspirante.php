@@ -65,7 +65,7 @@
                                                 <input type="radio" name="adeudo" value="1"> Si
                                             </label>
                                             <label>
-                                                <input type="radio" name="adeudo" value="0"> No
+                                                <input type="radio" name="adeudo" value="0" checked> No
                                             </label>
                                         </fieldset>
                                     </div>
@@ -86,14 +86,14 @@
                                             <input type="radio" name="enfermedad" value="1"> Si
                                         </label>
                                         <label>
-                                            <input type="radio" name="enfermedad" value="0"> No
+                                            <input type="radio" name="enfermedad" value="0" checked> No
                                         </label>
                                     </fieldset>
                                     <div class="form-row">
                                         <div class="col-md-12">
                                             <div class="position-relative form-group">
                                                 <label for="exampleText" class="">Tipo de enfermedad</label>
-                                                <input type="text" class="form-control" id="" placeholder="Enfermedad..." name="tipo_enfermedad" value="<?php echo set_value('tipo_enfermedad'); ?>" required>
+                                                <input type="text" class="form-control" id="" placeholder="Enfermedad..." name="tipo_enfermedad" value="<?php echo set_value('tipo_enfermedad'); ?>" >
                                             </div>
                                         </div>
                                     </div>
@@ -113,14 +113,14 @@
                                             <input type="radio" name="alergias" value="1"> Si
                                         </label>
                                         <label>
-                                            <input type="radio" name="alergias" value="0"> No
+                                            <input type="radio" name="alergias" value="0" checked> No
                                         </label>
                                     </fieldset>
                                     <div class="form-row">
                                         <div class="col-md-12 mb-3">
                                             <div class="position-relative form-group">
                                                 <label for="exampleText" class="">Tipo de alergia</label>
-                                                <input type="text" class="form-control" id="tipo_alergia" placeholder="Alergia..." name="tipo_alergia" value="<?php echo set_value('tipo_alergia'); ?>" required>
+                                                <input type="text" class="form-control" id="tipo_alergia" placeholder="Alergia..." name="tipo_alergia" value="<?php echo set_value('tipo_alergia'); ?>" >
                                             </div>
                                         </div>
                                     </div>
@@ -137,7 +137,7 @@
                                             <input type="radio" name="ansiedad" value="1"> Si
                                         </label>
                                         <label>
-                                            <input type="radio" name="ansiedad" value="0"> No
+                                            <input type="radio" name="ansiedad" value="0" checked> No
                                         </label>
                                     </fieldset>
                                 </div>
@@ -148,7 +148,7 @@
                                             <input type="radio" name="estres" value="1"> Si
                                         </label>
                                         <label>
-                                            <input type="radio" name="estres" value="0"> No
+                                            <input type="radio" name="estres" value="0" checked> No
                                         </label>
                                     </fieldset>
                                 </div>
@@ -159,7 +159,7 @@
                                             <input type="radio" name="depresion" value="1"> Si
                                         </label>
                                         <label>
-                                            <input type="radio" name="depresion" value="0"> No
+                                            <input type="radio" name="depresion" value="0" checked> No
                                         </label>
                                     </fieldset>
                                 </div>
@@ -170,7 +170,7 @@
                                             <input type="radio" name="rechazo" value="1"> Si
                                         </label>
                                         <label>
-                                            <input type="radio" name="rechazo" value="0"> No
+                                            <input type="radio" name="rechazo" value="0" checked> No
                                         </label>
                                     </fieldset>
                                 </div>
@@ -180,7 +180,7 @@
                                 <label for="">¿Te adaptas fácilmente a cambios?</label> <br>
                                 <fieldset>
                                         <label>
-                                            <input type="radio" name="adaptarse_a_cambios" value="1"> Si
+                                            <input type="radio" name="adaptarse_a_cambios" value="1" checked> Si
                                         </label>
                                         <label>
                                             <input type="radio" name="adaptarse_a_cambios" value="0"> No
@@ -201,25 +201,25 @@
                             <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label text-main text-bold">Foto de acta de nacimiento: </label>
-                                        <input type="file" class="form-control-file" name="img[]" id="img_acta_nacimiento">
+                                        <input type="file" class="form-control-file" name="img[]" id="img_acta_nacimiento" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label text-main text-bold">Foto de CURP actualizada: </label>
-                                        <input type="file" class="form-control-file" name="img[]" id="img_curp">
+                                        <input type="file" class="form-control-file" name="img[]" id="img_curp" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label text-main text-bold">Foto de comprobante de domicilio: </label>
-                                        <input type="file" class="form-control-file" name="img[]" id="img_comprobante_domicilio">
+                                        <input type="file" class="form-control-file" name="img[]" id="img_comprobante_domicilio" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label text-main text-bold">Foto de comprobante de estudios: </label>
-                                        <input type="file" class="form-control-file" name="img[]" id="img_comprobante_estudios">
+                                        <input type="file" class="form-control-file" name="img[]" id="img_comprobante_estudios" required>
                                     </div>
                                 </div>
                             </div>
@@ -228,19 +228,19 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label text-main text-bold">Foto del aspirante: </label>
-                                        <input type="file" class="form-control-file" name="img[]" id="img_aspirante">
+                                        <input type="file" class="form-control-file" name="img[]" id="img_aspirante" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label text-main text-bold">Foto de la ficha de admición: </label>
-                                        <input type="file" class="form-control-file" name="img[]" id="img_ficha_admicion">
+                                        <input type="file" class="form-control-file" name="img[]" id="img_ficha_admicion" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label text-main text-bold">Foto del formato de inscripción: </label>
-                                        <input type="file" class="form-control-file" name="img[]" id="img_formato_inscripcion">
+                                        <input type="file" class="form-control-file" name="img[]" id="img_formato_inscripcion" required>
                                     </div>
                                 </div>
                             </div>

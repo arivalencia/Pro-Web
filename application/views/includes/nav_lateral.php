@@ -17,12 +17,6 @@
                     </a>
                 </li>
                 <li  >
-                    <a href="<?php echo base_url();?>ver_actas">
-                        <i class="metismenu-icon pe-7s-display2"></i>
-                        Visualizar actas
-                    </a>
-                </li>
-                <li  >
                     <a href="<?php echo base_url();?>aprobar_aspirante">
                         <i class="metismenu-icon pe-7s-display2"></i>
                         Inscribir aspirantes
@@ -31,7 +25,7 @@
                 <li  >
                     <a href="<?php echo base_url();?>capturar_calificacion">
                         <i class="metismenu-icon pe-7s-display2"></i>
-                        Capturar calificaciones
+                        Ver y capturar calificaciones
                     </a>
                 </li>
             </ul>

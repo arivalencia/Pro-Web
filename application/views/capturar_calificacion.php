@@ -59,75 +59,41 @@
                                         <tr>
                                             <th>Matricula</th>
                                             <th>Alúmno</th>
-                                            <th>Tipo examen</th>
                                             <th>1°</th>
                                             <th>2°</th>
                                             <th>3°</th>
                                             <th>4°</th>
                                             <th>Calf. final</th>
+                                            <th>Registrar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1811113747</th>
-                                            <td>Eduardo Gonzales Valencia</td>
-                                            <td>0</td>
-                                            <td>93</td>
-                                            <td>90</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>47</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">1811113747</th>
-                                            <td>Pepe Pica Papas</td>
-                                            <td>0</td>
-                                            <td>93</td>
-                                            <td>90</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>47</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">1811113747</th>
-                                            <td>Daniel Gonzales Valencia</td>
-                                            <td>0</td>
-                                            <td>93</td>
-                                            <td>90</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>47</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">1811113747</th>
-                                            <td>El amor de mi vida 3000</td>
-                                            <td>0</td>
-                                            <td>93</td>
-                                            <td>90</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>47</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">1811113747</th>
-                                            <td>Luis Alberto Titla</td>
-                                            <td>0</td>
-                                            <td>93</td>
-                                            <td>90</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>47</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">1811113747</th>
-                                            <td>Cesar Bermudes Rivas</td>
-                                            <td>0</td>
-                                            <td>93</td>
-                                            <td>90</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>47</td>
-                                        </tr>
+                                        <?php
+                                        // debug($alumnos[0]->Id_Aspirante);
+
+                                            for ($i=0; $i < count($alumnos); $i++) { 
+                                                echo    '<tr>
+                                                        <th scope="row">'.$alumnos[$i]->Id_Aspirante.'</th>
+                                                        <td>'.$alumnos[$i]->Nombre.' '
+                                                        .$alumnos[$i]->Apaterno.' '
+                                                        .$alumnos[$i]->Amaterno.'</td>
+                                                        <td>'.$calificaciones[$i]->parcial1.'</td>
+                                                        <td>'.$calificaciones[$i]->parcial2.'</td>
+                                                        <td>'.$calificaciones[$i]->parcial3.'</td>
+                                                        <td>'.$calificaciones[$i]->parcial4.'</td>
+                                                        <td>'.($calificaciones[$i]->parcial1+
+                                                        $calificaciones[$i]->parcial2+
+                                                        $calificaciones[$i]->parcial3+
+                                                        $calificaciones[$i]->parcial4)/(4).'</td>
+                                                        <td>
+                                                        <input type="hidden" name="id" value="">
+                                                        <a href="javascript:void(0)" class="btn btn-icon btn-primary mb-2">
+                                                            <input class="btn btn-primary" value="Editar" type="submit" id="button-upload">
+                                                        </a>
+                                                        </td>
+                                                    </tr>';
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
