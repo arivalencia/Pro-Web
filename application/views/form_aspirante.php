@@ -11,13 +11,15 @@
 	<meta name="msapplication-tap-highlight" content="no">
     
     <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet">
-	<link href="./main.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>main.css" rel="stylesheet">
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+
         <!--NAV SUP--->
         <?=$this->load->view('includes/nav.php','',true); ?>
         <!--NAV SUP--->
+        
         <!-- CONTENEDOR DE LAS VISTAS -->
         <div class="app-main">
             

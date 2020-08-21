@@ -24,7 +24,7 @@ class M_calificaciones extends CI_Model{
 
     public function crearRegistro($id){
         $data = array();
-        $data['id_calificaiones'] = $id;
+        $data['id_aspirante'] = $id;
         return $this->db->insert($this->tabla, $data);
     }//end deleteAspirante
 }

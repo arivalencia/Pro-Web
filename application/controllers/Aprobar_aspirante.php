@@ -11,12 +11,17 @@ class Aprobar_aspirante extends CI_Controller {
 		$this->load->model(array('M_aspirante', 'M_alumno', 'M_calificaciones'));
 	}
 
+	/*
+	METODO PRINCIPAL
+	*/
 	public function index(){
 		$data = array();
 		$data["aspirantes"] = $this->M_aspirante->getAspirantes();
 		$this->load->view('aprobar_aspirante', $data);
 	}
-
+	/*
+	METODO PARA INSCRIBIR A ALUMNO
+	*/
 	public function inscribir(){
 		$id = $this->input->post('id');
 		$this->setNewStudent(); //Añade el aspirante a la lista de alumnos
@@ -27,6 +32,20 @@ class Aprobar_aspirante extends CI_Controller {
 		$this->M_aspirante->inscribirAspirante($id, $data);// Cambia el STATUS a 1 para saber que esta incrito
 		redirect('aprobar_aspirante/');
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	public function setNewStudent(){
 		$data = array();

@@ -18,6 +18,10 @@ class Capturar_calificacion extends CI_Controller {
 		$this->load->view('capturar_calificacion', $data);
 	}
 
+	/**
+	 * DEVUELVE LA VISTA PARA CAPTURAR CALIFICACIONES
+	 * AL HACER CLIC EN "INSCRIBIR"
+	 */
 	public function capturar(){
 		$data = array();
 		$id = $this->input->post('id');
@@ -27,6 +31,9 @@ class Capturar_calificacion extends CI_Controller {
 		// debug($data, false);
 	}
 
+	/*
+	ACTUALIZA EL REGISTRO DE CALIFICACIONES 
+	DEL ALUMNO QUE SE ESTE EDITANDO */
 	public function actualizar_calificacion(){
 		$id = $this->input->post('id');
 		$data = array();

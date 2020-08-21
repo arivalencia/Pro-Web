@@ -10,7 +10,8 @@
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
 	<meta name="msapplication-tap-highlight" content="no">
 	
-	<link href="./main.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>main.css" rel="stylesheet">
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -19,10 +20,14 @@
         <?=$this->load->view('includes/nav.php','',true); ?>
         <!--NAV SUP--->
 
+        <!-- CONTENEDOR DE LAS VISTAS -->
         <div class="app-main">
+
             <!--NAV LATERAL--->
             <?=$this->load->view('includes/nav_lateral.php','',true); ?>
             <!--NAV LATERAL--->
+
+            <!--CUERPO DE EL CUADRO PRINCIPAL--->
             <div class="app-main__outer">
                 <div class="app-main__inner">
                     <div class="main-card mb-3 card">
@@ -47,6 +52,7 @@
                                     </div>
                                     <table id="data-table" class="table mb-0 table-striped" cellspacing="0" width="100%">
                                         <thead>
+                                        <!--CABECERAS DE TABLA-->
                                             <tr>
                                                 <th>Alumno</th>
                                                 <th>Parcial 1</th>
@@ -56,6 +62,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <!--
+                                            FORMULARIO PARA INGRESAR DATOS
+                                            --->
                                             <tr>
                                                 <th scope="row"> <?php echo $alumno->Nombre.' '.$alumno->Apaterno.' '.$alumno->Amaterno; ?></th>
                                                 <td><input type="text" class="form-control" name="parcial1" value="<?php echo set_value('parcial1'); ?>"></td>
@@ -77,6 +86,7 @@
     </div>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript" src="./assets/scripts/main.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 </body>
 </html>
 

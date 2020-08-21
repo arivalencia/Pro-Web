@@ -12,6 +12,9 @@ class Form_aspirante extends CI_Controller {
 		$this->load->model($this->model);
 	}
 
+	/**
+	 * METODO PRINCIPAL
+	 */
 	public function index(){
 		$data = array();
 		$data['carreras'] = array(
@@ -26,6 +29,9 @@ class Form_aspirante extends CI_Controller {
 		$this->load->view('form_aspirante', $data);
 	}
 
+	/**
+	 * METODO PARA AGREGAR ASPIRANTE NUEVO
+	 */
 	public function agregar_aspirante(){
 		$data=array();
 		// debug('');

@@ -10,7 +10,8 @@
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
 	<meta name="msapplication-tap-highlight" content="no">
 	
-	<link href="./main.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>main.css" rel="stylesheet">
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -37,6 +38,9 @@
                                     <table class="table table-striped mb-0">
                                         <thead>
                                             <tr>
+                                            <!--
+                                                CABECERAS DE LA TABLA
+                                            -->
                                                 <th>#</th>
                                                 <th>Nombre(s)</th>
                                                 <th>Apellidos</th>
@@ -44,6 +48,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <!--
+                                            LLENADO DE TABLAS
+                                            CON LOS DIFERENTES DATOS
+                                        -->
                                         <?php
                                             $count = 0;
                                             foreach($aspirantes as $aspirante){
