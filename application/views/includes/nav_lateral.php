@@ -10,22 +10,46 @@
                     </a>
                 </li>
                 <li class="app-sidebar__heading">Administración</li>
-                <li  >
-                    <a href="<?php echo base_url();?>form_aspirante">
+                <li>
+                    <a href="<?php echo base_url();?>inventario">
                         <i class="metismenu-icon pe-7s-display2"></i>
-                        Formulario de aspirantes
+                        Inventario
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>compras">
+                        <i class="metismenu-icon pe-7s-display2"></i>
+                        Compras
+                    </a>
+                </li>
+                <li >
+                    <a href="<?php echo base_url();?>usuarios">
+                        <i class="metismenu-icon pe-7s-display2"></i>
+                        Usuarios
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>ordenesServicios">
+                        <i class="metismenu-icon pe-7s-display2"></i>
+                        Ordenes de servicios
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>ordenesCompras">
+                        <i class="metismenu-icon pe-7s-display2"></i>
+                        Ordenes de compras
                     </a>
                 </li>
                 <li  >
-                    <a href="<?php echo base_url();?>aprobar_aspirante">
+                    <a href="<?php echo base_url();?>garantias">
                         <i class="metismenu-icon pe-7s-display2"></i>
-                        Inscribir aspirantes
+                        Garantías
                     </a>
                 </li>
                 <li  >
-                    <a href="<?php echo base_url();?>capturar_calificacion">
+                    <a href="<?php echo base_url();?>ventas">
                         <i class="metismenu-icon pe-7s-display2"></i>
-                        Ver y capturar calificaciones
+                        Ventas
                     </a>
                 </li>
             </ul>
